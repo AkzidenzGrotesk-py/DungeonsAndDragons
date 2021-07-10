@@ -1,0 +1,271 @@
+<!doctype html>
+<html>
+  <head>
+    <title>D&D: Day Tracker</title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="shortcut icon" href="ico/lab.ico">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+      html, head {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+
+      body {
+        margin: 16px 20%;
+        font-family: Roboto, sans-serif;
+        background: #121212;
+        color: #fff;
+      }
+
+      h1, h2, h3 {
+        font-weight: 900;
+        border-bottom: 1px #888 solid;
+        padding-bottom: 8px;
+        margin-bottom: 16px;
+      }
+
+      input[type="number"] {
+        font-family: Roboto, sans-serif;
+        font-size: 16px;
+        font-style: italic;
+        font-weight: bold;
+        color: #fcba03;
+        background: #121212;
+        border: none;
+        margin-bottom: 2px;
+      }
+      
+      details p, details summary {
+        margin: 0;
+      }
+      
+      details p {
+        margin-left: 8px;
+      }
+      
+      details button {
+        border: none;
+        border-bottom: 1px #888 solid;
+        padding: 4px 8px;
+        margin: 2px;
+        color: white;
+        font-size: 16px;
+        background: inherit;
+        font-family: Roboto, sans-serif;
+        cursor: pointer;
+        transition: 0.2s border-bottom;
+      }
+      
+      details button:hover {
+        border-bottom: 1px #fcba03 solid; 
+      }
+
+      .hours {
+        margin-top: 16px;
+        columns: 2;
+        line-height: 1.75;
+      }
+
+      .hours .extendedInputArea {
+        padding-right: 32px;
+        padding: 12px 32px;
+        cursor: pointer;
+      }
+
+      .vhour, br {
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+      }
+      
+      .hours input[type="text"] {
+        border: none;
+        font-size: 16px;
+        color: #bbb;
+        background: inherit;
+        font-family: Roboto, sans-serif;
+        font-style: italic;
+        font-weight: 300;
+      }
+    </style>
+  </head>
+  <body onload="generate_checkboxes(24)">
+    <h1>🐉 D&amp;D: Hour-to-Hour Tracker</h1>
+    <label for="nhours">Hours ⏰ — </label>
+    <input id="nhours" name="nhours" value="24" type="number">
+    <br/>
+
+    <label for="nhourmorning">Morning Threshold 🌅 — </label>
+    <input id="nhourmorning" name="nhourmorning" value="8" type="number">
+    <br/>
+
+    <label for="b24">"24h" — </label>
+    <input id="b24" name="b24" type="checkbox">
+    <br/><br/>
+    
+    <details>
+      <summary>Usage/Controls</summary>
+      <p>
+        <b>Click/Drag -</b> Select/Multi-select checkboxes.<br/>
+        <em>Fill in the inputs ('...') to the right of the checkboxes.</em><br/>
+        <em>This tool relies on cookies. Please ensure they are enabled.</em><br/>
+        <button onclick="general_events(0)">Reset Mouse</button>
+        <button onclick="general_events(1)">Clear to Morning Threshold</button>
+      </p>
+    </details>
+
+    <br/>
+
+    <h3 id="live_clock">Please enable JavaScript!</h3>
+
+    <div id="hours" class="hours">
+
+    </div>
+  </body>
+  <script type="text/javascript" src="w3scookies.js"></script>
+  <script type="text/javascript">
+    function deleteAllCookies() {
+      var cookies = document.cookie.split(";");
+
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        var eqPos = cookie.indexOf("=");
+        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+      }
+    }
+
+    // MULTI-CHECK
+    function check(box) {
+      if(mouseDown) {
+        box.firstChild.checked = 1-box.firstChild.checked;
+      }
+    }
+    
+    // SAVE TEXT
+    function save_text() {
+      var inputs = document.getElementsByClassName("inputToSave");
+      for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].value != "") setCookie(i + "saved_text", inputs[i].value, 365);
+        else setCookie(i + "saved_text", "", 365);
+      }
+    }
+
+    // CURRENT HOUR UPDATE
+    function generate_time() {
+      var checkboxes = document.getElementsByClassName("bhour");
+
+      if (checkboxes.length > 0) {
+        var checkedBox, update_text;
+
+        for (var i = 0; i < checkboxes.length; i++) {
+          if (checkboxes[i].checked) checkedBox = checkboxes[i];
+        }
+
+        if (checkedBox != null) {
+          var values = document.getElementsByClassName("vhour");
+          for (var i = 0; i < values.length; i++) {
+              if (values[i].attributes.for.nodeValue == checkedBox.name) update_text = values[i].innerHTML;
+          }
+          
+          setCookie("ctime", checkedBox.name.slice(0, -2), 365);
+          document.getElementById("live_clock").innerHTML = "🕒 — " + update_text;
+        }
+      }
+    }
+
+    // CHECKBOXES
+    function generate_checkboxes(count, ignore_cookie) {
+      // META
+      var temp_, label, hdiv;
+      hdiv = document.getElementById("hours");
+      hdiv.innerHTML = '';
+
+      // EACH HOUR
+      for (x = 0; x < count; x++) {
+        // CHECKBOX
+        label = document.createElement("LABEL");
+        label.setAttribute("class", "extendedInputArea");
+        label.setAttribute("onmouseover", "check(this)");
+        hdiv.appendChild(label)
+
+        temp_ = document.createElement("INPUT");
+        temp_.setAttribute("type", "checkbox");
+        temp_.setAttribute("id", "bhour");
+        temp_.setAttribute("class", "bhour");
+        temp_.setAttribute("name", x + "cb");
+        var c = document.getElementById('nhourmorning').value;
+        if (!ignore_cookie && parseInt(getCookie("ctime"))+1 > document.getElementById('nhourmorning').value) c = parseInt(getCookie("ctime"))+1;
+        if (x < c) temp_.checked = true;
+        label.appendChild(temp_);
+
+        // CHECKBOX LABEL
+        temp_ = document.createElement("VALUE");
+        temp_.setAttribute("for", x + "cb");
+        temp_.setAttribute("onselectstart", "return false");
+        if (x+1 == document.getElementById('nhourmorning').value) temp_.textContent = "🌅 "
+        else temp_.textContent = ""
+        if (document.getElementById('b24').checked) {
+          temp_.textContent += (x + 1) + ":00 h — ";
+        } else {
+          var n, s;
+          n = (x + 1) % (0.5 * count);
+          if (n == 0) n = 0.5 * count;
+
+          s = "AM"
+          if (x >= (0.5 * count)) s = "PM";
+
+          temp_.textContent += Math.round(n) + ":00 " + s + " — ";
+        }
+        temp_.setAttribute("class", "vhour");
+        hdiv.appendChild(temp_);
+        
+        // TEXT INPUT
+        temp_ = document.createElement("INPUT");
+        temp_.setAttribute("type", "text");
+        temp_.setAttribute("name", x + "saved_text");
+        temp_.setAttribute("class", "inputToSave");
+        temp_.setAttribute("placeholder", "...");
+        
+        if (getCookie(x + "saved_text") != "" && !ignore_cookie) {
+          temp_.setAttribute("value", getCookie(x + "saved_text"));
+        }
+        
+        hdiv.appendChild(temp_);
+
+        // NEWLINE
+        temp_ = document.createElement("BR");
+        hdiv.appendChild(temp_);
+      }
+
+      generate_time();
+    }
+    
+    // GENERAL EVENTS
+    function general_events(n) {
+      if (0 == n) {
+        mouseDown = 0;  
+      } else if (1 == n) {
+        deleteAllCookies();
+        generate_checkboxes(document.getElementById('nhours').value, true);
+      }
+    }
+    
+    // EVENTS
+    nhours.addEventListener("input", function (e) {generate_checkboxes(this.value, false);});
+    nhourmorning.addEventListener("input", function (e) {generate_checkboxes(document.getElementById('nhours').value, false);});
+    b24.addEventListener("input", function (e) {generate_checkboxes(document.getElementById('nhours').value, false);});
+    document.addEventListener("click", generate_time);
+    document.addEventListener("keypress", save_text);
+
+    // MOUSEDOWN
+    var mouseDown = 0;
+    document.body.onmousedown = function(){++mouseDown;}
+    document.body.onmouseup = function(){--mouseDown;}
+  </script>
+</html>
