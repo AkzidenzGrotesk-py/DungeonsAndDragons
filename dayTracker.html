@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+  <head>
+    <title>D&D: Day Tracker</title>
+    <meta charset="utf-8" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+      html, head {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+
+      body {
+        margin: 16px 20%;
+        font-family: Roboto, sans-serif;
+        background: #121212;
+        color: #fff;
+      }
+
+      h1, h2, h3 {
+        font-weight: 900;
+        border-bottom: 1px #888 solid;
+        padding-bottom: 8px;
+        margin-bottom: 16px;
+      }
+
+      input[type="number"] {
+        font-family: Roboto, sans-serif;
+        font-size: 16px;
+        font-style: italic;
+        font-weight: bold;
+        color: #fcba03;
+        background: #121212;
+        border: none;
+        margin-bottom: 2px;
+      }
+
+      .hours {
+        margin-top: 16px;
+        columns: 2;
+        line-height: 1.75;
+      }
+
+      .hours .extendedInputArea {
+        padding-right: 32px;
+        padding: 12px 32px;
+        cursor: pointer;
+      }
+
+      .vhour, br {
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+      }
+    </style>
+  </head>
+  <body onload="generate_checkboxes(24)">
+    <h1>🐉 D&amp;D: Hour-to-Hour Tracker</h1>
+    <label for="nhours">Hours ⏰ — </label>
+    <input id="nhours" name="nhours" value="24" type="number">
+    <br/>
+
+    <label for="nhourmorning">Morning Threshold 🌅 — </label>
+    <input id="nhourmorning" name="nhourmorning" value="8" type="number">
+    <br/>
+
+    <label for="b24">"24h" — </label>
+    <input id="b24" name="b24" type="checkbox">
+    <br/><br/>
+
+    <em><b>Tip:</b> Drag-click to multi-select. Broken? Press </em>[R].
+    <br/>
+
+    <h3 id="live_clock">Please enable JavaScript!</h3>
+
+    <div id="hours" class="hours">
+
+    </div>
+  </body>
+  <script>
+    // MULTI-CHECK
+    function check(box) {
+      if(mouseDown) {
+        box.firstChild.checked = 1-box.firstChild.checked;
+      }
+    }
+
+    // CURRENT HOUR UPDATE
+    function generate_time() {
+      var checkboxes = document.getElementsByClassName("bhour");
+
+      if (checkboxes.length > 0) {
+        var checkedBox, update_text;
+
+        for (var i = 0; i < checkboxes.length; i++) {
+          if (checkboxes[i].checked) checkedBox = checkboxes[i];
+        }
+
+        if (checkedBox != null) {
+          var values = document.getElementsByClassName("vhour");
+          for (var i = 0; i < values.length; i++) {
+              if (values[i].attributes.for.nodeValue == checkedBox.name) update_text = values[i].innerHTML;
+          }
+
+          document.getElementById("live_clock").innerHTML = "🕒 — <em>" + update_text + "</em>";
+        }
+      }
+    }
+
+    // CHECKBOXES
+    function generate_checkboxes(count) {
+      // META
+      var temp_, label, hdiv;
+      hdiv = document.getElementById("hours");
+      hdiv.innerHTML = '';
+
+      // EACH HOUR
+      for (x = 0; x < count; x++) {
+        // CHECKBOX
+        label = document.createElement("LABEL");
+        label.setAttribute("class", "extendedInputArea");
+        label.setAttribute("onmouseover", "check(this)");
+        hdiv.appendChild(label)
+
+        temp_ = document.createElement("INPUT");
+        temp_.setAttribute("type", "checkbox");
+        temp_.setAttribute("id", "bhour");
+        temp_.setAttribute("class", "bhour");
+        temp_.setAttribute("name", x + "cb");
+        if (x < document.getElementById('nhourmorning').value) temp_.checked = true;
+        label.appendChild(temp_);
+
+        // CHECKBOX LABEL
+        temp_ = document.createElement("VALUE");
+        temp_.setAttribute("for", x + "cb");
+        temp_.setAttribute("onselectstart", "return false");
+        if (document.getElementById('b24').checked) {
+          temp_.textContent = (x + 1) + ":00 h";
+        } else {
+          var n, s;
+          n = (x + 1) % (0.5 * count);
+          if (n == 0) n = 0.5 * count;
+
+          s = "AM"
+          if (x >= (0.5 * count)) s = "PM";
+
+          temp_.textContent = Math.round(n) + ":00 " + s;
+        }
+        temp_.setAttribute("class", "vhour");
+        hdiv.appendChild(temp_);
+
+        // NEWLINE
+        temp_ = document.createElement("BR");
+        hdiv.appendChild(temp_);
+      }
+
+      generate_time();
+    }
+
+    // EVENTS
+    nhours.addEventListener("input", function (e) {generate_checkboxes(this.value);});
+    nhourmorning.addEventListener("input", function (e) {generate_checkboxes(document.getElementById('nhours').value);});
+    b24.addEventListener("input", function (e) {generate_checkboxes(document.getElementById('nhours').value);});
+    document.addEventListener("click", generate_time);
+    document.addEventListener("keypress", function onEvent(event) {
+      if (event.key == "r") {
+          mouseDown = 0
+      }
+    });
+
+    // MOUSEDOWN
+    var mouseDown = 0;
+    document.body.onmousedown = function(){++mouseDown;}
+    document.body.onmouseup = function(){--mouseDown;}
+  </script>
+</html>
