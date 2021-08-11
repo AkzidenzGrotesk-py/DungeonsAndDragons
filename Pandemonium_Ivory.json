@@ -13,8 +13,8 @@
 				"convertedBy": []
 			}
 		],
-		"dateAdded": 1628484901,
-		"dateLastModified": 1628484901
+		"dateAdded": 1628724886,
+		"dateLastModified": 1628724886
 	},
 	"monster": [
 		{
@@ -1016,7 +1016,7 @@
 				{
 					"name": "Multiattack",
 					"entries": [
-						"The gnoll makes three attacks: one with its bite and two with its claws."
+						"The gnoll makes three attacks: one with its bite and two with its claws. It uses Incite Rampage if it can."
 					]
 				},
 				{
@@ -1030,11 +1030,39 @@
 					"entries": [
 						"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}8 ({@damage 1d8 + 4}) slashing damage."
 					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "MOVE INTO POSITION! (Recharge short/long rest)",
+					"entries": [
+						"In the first round of combat, the gnoll exalted guardian commands every gnoll within 40 ft. Each gnoll must use their reaction to move half their movement or take a single attack."
+					]
 				},
 				{
 					"name": "Incite Rampage {@recharge 5}",
 					"entries": [
 						"One creature the gnoll can see within 30 feet of it can use its reaction to make a melee attack if it can hear the gnoll and has the Rampage trait."
+					]
+				},
+				{
+					"name": "Dominate Beast (Basilisk)",
+					"entries": [
+						"The gnoll exalted guardian commands an instruction a basilisk that can hear and see him."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "BREAK YOUR BONDS!",
+					"entries": [
+						"When a creature that the gnoll exalted guardian can see fails a saving throw, the gnoll exalted guardian can choose for them to succeed instead."
+					]
+				},
+				{
+					"name": "RISE, BROTHER!",
+					"entries": [
+						"When a gnoll which the gnoll exalted guardian can see dies from a non-AOE attack, the gnoll can make a Charisma check of {@dc 10} to regain half of its hit points."
 					]
 				}
 			],
