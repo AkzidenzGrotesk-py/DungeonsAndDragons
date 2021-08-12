@@ -13,8 +13,8 @@
 				"convertedBy": []
 			}
 		],
-		"dateAdded": 1628724886,
-		"dateLastModified": 1628724886
+		"dateAdded": 1628809075,
+		"dateLastModified": 1628809075
 	},
 	"monster": [
 		{
@@ -984,18 +984,18 @@
 				}
 			],
 			"hp": {
-				"formula": "8d8 + 16",
-				"average": 52
+				"formula": "10d8 + 10",
+				"average": 55
 			},
 			"speed": {
 				"walk": 30
 			},
 			"str": 18,
 			"dex": 16,
-			"con": 15,
-			"int": 8,
+			"con": 13,
+			"int": 14,
 			"wis": 11,
-			"cha": 9,
+			"cha": 7,
 			"senses": [
 				"darkvision 60 ft."
 			],
@@ -1034,9 +1034,9 @@
 			],
 			"bonus": [
 				{
-					"name": "MOVE INTO POSITION! (Recharge short/long rest)",
+					"name": "Dominate Beast (Basilisk)",
 					"entries": [
-						"In the first round of combat, the gnoll exalted guardian commands every gnoll within 40 ft. Each gnoll must use their reaction to move half their movement or take a single attack."
+						"The gnoll exalted guardian commands an instruction a basilisk that can hear and see him, this instruction is followed until the beginning of the gnoll exalted guardian's next turn. This domination works similarly to concentration, and if the concentration ends, the basilisk can disobey the instruction."
 					]
 				},
 				{
@@ -1046,9 +1046,9 @@
 					]
 				},
 				{
-					"name": "Dominate Beast (Basilisk)",
+					"name": "MOVE INTO POSITION! (Recharge short/long rest)",
 					"entries": [
-						"The gnoll exalted guardian commands an instruction a basilisk that can hear and see him."
+						"In the first round of combat, the gnoll exalted guardian commands every gnoll within a 20 ft radius sphere centered on a point he chooses. Each gnoll in the area must use their reaction to move half their movement or take a single attack."
 					]
 				}
 			],
@@ -1056,13 +1056,13 @@
 				{
 					"name": "BREAK YOUR BONDS!",
 					"entries": [
-						"When a creature that the gnoll exalted guardian can see fails a saving throw, the gnoll exalted guardian can choose for them to succeed instead."
+						"When a creature that the gnoll exalted guardian can see fails a saving throw, the gnoll exalted guardian can choose for them to reroll it."
 					]
 				},
 				{
 					"name": "RISE, BROTHER!",
 					"entries": [
-						"When a gnoll which the gnoll exalted guardian can see dies from a non-AOE attack, the gnoll can make a Charisma check of {@dc 10} to regain half of its hit points."
+						"When a gnoll which the gnoll exalted guardian can see dies from a non-AOE attack, the gnoll can make a Charisma check of {@dc 12} to regain half of its hit points."
 					]
 				}
 			],
