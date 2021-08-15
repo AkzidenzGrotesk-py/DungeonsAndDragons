@@ -13,8 +13,8 @@
 				"convertedBy": []
 			}
 		],
-		"dateAdded": 1628809075,
-		"dateLastModified": 1628809075
+		"dateAdded": 1629006267,
+		"dateLastModified": 1629006267
 	},
 	"monster": [
 		{
@@ -357,15 +357,15 @@
 			],
 			"ac": [
 				{
-					"ac": 13,
+					"ac": 12,
 					"from": [
 						"natural armor"
 					]
 				}
 			],
 			"hp": {
-				"formula": "9d8 + 36",
-				"average": 76
+				"formula": "6d8 + 24",
+				"average": 52
 			},
 			"speed": {
 				"walk": 40,
