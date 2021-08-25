@@ -7,6 +7,21 @@ document.addEventListener('keydown', (event) => {
 		var lines = content.split("\n");
 
 		for (var i = 0; i < lines.length; i++) {
+			// Dice
+			var dice_seqs = lines[i].match(/\d+d\d+/gm);
+			if (dice_seqs != null) {
+				for (var j = 0; j < dice_seqs.length; j++) {
+					var dice = dice_seqs[j].split("d");
+					var total = 0;
+					for (var k = 0; k < parseInt(dice[0]); k++) {
+						total += Math.floor(Math.random() * parseInt(dice[1])) + 1;
+					}
+					var match = lines[i].indexOf(dice_seqs[j]);
+					lines[i] = lines[i].replace(dice_seqs, total);
+				}
+			}
+
+			// Calculations
 			var calcs = lines[i].match(/(?![\s])[0-9+\-*\/. %()]+/gm);
 			if (calcs == null) continue;
 			for (var j = 0; j < calcs.length; j++) {
