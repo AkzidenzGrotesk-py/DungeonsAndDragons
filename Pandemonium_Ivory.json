@@ -13,8 +13,8 @@
 				"convertedBy": []
 			}
 		],
-		"dateAdded": 1629006267,
-		"dateLastModified": 1629006267
+		"dateAdded": 1629948362,
+		"dateLastModified": 1629948362
 	},
 	"monster": [
 		{
@@ -1425,6 +1425,206 @@
 			],
 			"conditionInflict": [
 				"frightened"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Xug (Kobold Scale Sorcerer)",
+			"source": "PandemoniumIvory",
+			"level": 4,
+			"size": "S",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"kobold"
+				]
+			},
+			"alignment": [
+				"N",
+				"G"
+			],
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"draconic"
+					]
+				}
+			],
+			"hp": {
+				"formula": "4d6 + 12",
+				"average": 26
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 7,
+			"dex": 15,
+			"con": 14,
+			"int": 10,
+			"wis": 9,
+			"cha": 18,
+			"skill": {
+				"arcana": "+2",
+				"medicine": "+1"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 9,
+			"languages": [
+				"Common",
+				"Draconic"
+			],
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The kobold is a 3rd-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 14}, {@hit 6} to hit with spell attacks). ",
+						"It has the following sorcerer spells prepared:"
+					],
+					"spells": {
+						"0": {
+							"spells": [
+								"{@spell icicle} (fire bolt)",
+								"{@spell light}",
+								"{@spell mage hand}",
+								"{@spell prestidigitation}",
+								"{@spell ray of frost}"
+							]
+						},
+						"1": {
+							"spells": [
+								"{@spell charm person}",
+								"{@spell magic missile}",
+								"{@spell shield}"
+							],
+							"slots": 4
+						},
+						"2": {
+							"spells": [
+								"{@spell numbing ray} (scorching ray)",
+								"{@spell spider climb}"
+							],
+							"slots": 3
+						}
+					},
+					"ability": "cha",
+					"type": "spellcasting"
+				}
+			],
+			"trait": [
+				{
+					"name": "Sorcery Points",
+					"entries": [
+						"The kobold has 4 sorcery points. It regains all its spent sorcery points when it finishes a long rest. It can spend its sorcery points on the following options:",
+						"Twinned Spell: When it casts a spell that targets only one creature and doesn't have a range of self, the kobold can spend a number of sorcery points equal to the spell's level to target a second creature in range with the same spell (1 sorcery point if the spell is a cantrip).",
+						"Subtle Spell: When the kobold casts a spell, it can spend 1 sorcery point to cast the spell without any somatic or verbal components."
+					]
+				},
+				{
+					"name": "Dragon Ancestor",
+					"entries": [
+						"The kobold is a draconic bloodline sorcerer of white dragon descent."
+					]
+				},
+				{
+					"name": "Draconic Resilience",
+					"entries": [
+						"At 1st level, the kobold's hit point maximum increases by 1 and increases by 1 again whenever it gains a level in this class.",
+						"Additionally, parts of your skin are covered by a thin sheen of dragon-like scales. When you aren't wearing armor, your AC equals 13 + your Dexterity modifier."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Dagger",
+					"entries": [
+						"{@atk mw,rw} {@hit 4} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Quick Dice",
+					"entries": [
+						"Xug has a number of quick dice equal to twice his hit dice ({@dice 8d6}). He can use a number up to his level to regain hit points plus his Constitution modifier per dice."
+					]
+				}
+			],
+			"environment": [
+				"forest",
+				"hill",
+				"mountain",
+				"underdark",
+				"urban"
+			],
+			"fluff": {
+				"name": "Kobold Scale Sorcerer",
+				"source": "VGM",
+				"entries": [
+					{
+						"type": "entries",
+						"entries": [
+							{
+								"type": "entries",
+								"entries": [
+									{
+										"type": "entries",
+										"entries": [
+											"A kobold scale sorcerer has an innate talent for arcane magic, making it a highly valuable member of the tribe for several reasons. Because the kobolds' deity remains imprisoned, most tribes lack individuals that can use divine magic, and so the scale sorcerers fill the roles of advisor and historian. In times of peace, they use their spells to fortify and enhance the warren and aid the rest of the tribe. When the tribe is threatened, a scale sorcerer lashes out with fire and poison against enemies, saving a bit of magic for itself in case it needs to flee or take advantage of a captor.",
+											{
+												"name": "Duty-Bound to a Dragon",
+												"entries": [
+													" In a kobold tribe associated with a dragon, typically one that resides in or near the dragon's lair, the scale sorcerer also serves as diplomat and mouthpiece-anticipating the dragon's needs, issuing commands to other kobolds on the dragon's behalf, and reporting information back to the dragon. The sorcerer is just as awed by and respectful of dragons as common kobolds are, but it knows that its duty requires it not to fawn over its master at all times. It also understands that its frequent proximity to the dragon means it would probably be the first to die if its master became angry or displeased, and so it frantically maintains a balance between adoration and terror in its behavior toward the dragon.",
+													"Never make the mistake of thinking kobolds are stupid or backward just because they're small. Size has nothing to do with it.",
+													"-Volo"
+												],
+												"type": "entries"
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				],
+				"images": [
+					{
+						"type": "image",
+						"href": {
+							"type": "internal",
+							"path": "bestiary/VGM/Kobold Scale Sorcerer.jpg"
+						}
+					}
+				]
+			},
+			"tokenUrl": "https://5e.tools/img/VGM/Kobold Scale Sorcerer.png?v=1.134.0",
+			"soundClip": {
+				"type": "external",
+				"url": "https://5e.tools/audio/bestiary/kobold-scale-sorcerer.mp3?v=1.134.0"
+			},
+			"senseTags": [
+				"D"
+			],
+			"languageTags": [
+				"C",
+				"DR"
+			],
+			"damageTags": [
+				"P"
+			],
+			"spellcastingTags": [
+				"CS"
+			],
+			"miscTags": [
+				"MW",
+				"RW",
+				"THW"
+			],
+			"conditionInflictSpell": [
+				"charmed"
 			],
 			"hasFluff": true,
 			"hasFluffImages": true
