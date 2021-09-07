@@ -1,5 +1,5 @@
 {
-	"siteVersion": "1.134.0",
+	"siteVersion": "1.135.0",
 	"_meta": {
 		"sources": [
 			{
@@ -13,8 +13,8 @@
 				"convertedBy": []
 			}
 		],
-		"dateAdded": 1629948362,
-		"dateLastModified": 1629948362
+		"dateAdded": 1630978278,
+		"dateLastModified": 1630978278
 	},
 	"monster": [
 		{
@@ -1625,6 +1625,172 @@
 			],
 			"conditionInflictSpell": [
 				"charmed"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Fera (Afrera Bjinn)",
+			"source": "PandemoniumIvory",
+			"size": "M",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"any race"
+				]
+			},
+			"alignment": [
+				"NX",
+				"C",
+				"G",
+				"NY",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 14,
+					"from": [
+						"{@item leather armor|phb}"
+					]
+				}
+			],
+			"hp": {
+				"average": 54,
+				"formula": "12d8"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 12,
+			"dex": 16,
+			"con": 10,
+			"int": 16,
+			"wis": 11,
+			"cha": 11,
+			"skill": {
+				"acrobatics": "+7",
+				"athletics": "+3",
+				"stealth": "+7",
+				"deception": "+4",
+				"animal handling": "+2"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 10,
+			"languages": [
+				"Common",
+				"Gnomish"
+			],
+			"cr": "2",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"Fera is a natural spellcaster due to her gnomish origins. Her spellcasting ability is Intelligence (spell save {@dc 13}, +5 to hit with spell attacks)."
+					],
+					"spells": {
+						"0": {
+							"spells": [
+								"{@spell minor illusion}"
+							]
+						}
+					},
+					"ability": "int",
+					"type": "spellcasting"
+				}
+			],
+			"trait": [
+				{
+					"name": "Lightfooted",
+					"entries": [
+						"The swashbuckler can take the Dash or Disengage action as a bonus action on each of its turns."
+					]
+				},
+				{
+					"name": "Gnome Cunning",
+					"entries": [
+						"The fera (afrera bjinn) has advantage on Intelligence, Wisdom, and Charisma saving throws against magic."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The swashbuckler makes three attacks: one with a dagger and two with its rapier."
+					]
+				},
+				{
+					"name": "Dagger",
+					"entries": [
+						"{@atk mw,rw} {@hit 5} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}5 ({@damage 1d4 + 3}) piercing damage."
+					]
+				},
+				{
+					"name": "Rapier",
+					"entries": [
+						"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d8 + 3}) piercing damage."
+					]
+				}
+			],
+			"environment": [
+				"coastal",
+				"urban"
+			],
+			"fluff": {
+				"name": "Swashbuckler",
+				"source": "VGM",
+				"entries": [
+					{
+						"type": "entries",
+						"entries": [
+							{
+								"type": "entries",
+								"entries": [
+									{
+										"type": "entries",
+										"entries": [
+											"Swashbucklers are charming ne'er-do-wells who live by their own codes of honor. They crave notoriety, often indulge in romantic trysts, and eke out livings as pirates and corsairs, rarely staying in one place for too long."
+										]
+									}
+								]
+							}
+						]
+					}
+				],
+				"images": [
+					{
+						"type": "image",
+						"href": {
+							"type": "internal",
+							"path": "bestiary/VGM/Swashbuckler.jpg"
+						}
+					}
+				]
+			},
+			"tokenUrl": "https://5etools-mirror-1.github.io/img/VGM/Swashbuckler.png",
+			"soundClip": {
+				"type": "external",
+				"url": "https://5etools-mirror-1.github.io/audio/bestiary/swashbuckler.mp3"
+			},
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"G"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MW",
+				"RW",
+				"THW"
 			],
 			"hasFluff": true,
 			"hasFluffImages": true
