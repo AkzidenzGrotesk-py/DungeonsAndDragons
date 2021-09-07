@@ -13,8 +13,8 @@
 				"convertedBy": []
 			}
 		],
-		"dateAdded": 1630978278,
-		"dateLastModified": 1630978278
+		"dateAdded": 1630978470,
+		"dateLastModified": 1630978470
 	},
 	"monster": [
 		{
@@ -1710,7 +1710,7 @@
 				{
 					"name": "Gnome Cunning",
 					"entries": [
-						"The fera (afrera bjinn) has advantage on Intelligence, Wisdom, and Charisma saving throws against magic."
+						"The fera (Afrera Bjinn) has advantage on Intelligence, Wisdom, and Charisma saving throws against magic."
 					]
 				}
 			],
