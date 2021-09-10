@@ -13,8 +13,8 @@
 				"convertedBy": []
 			}
 		],
-		"dateAdded": 1631149964,
-		"dateLastModified": 1631149964
+		"dateAdded": 1631243298,
+		"dateLastModified": 1631243298
 	},
 	"monster": [
 		{
@@ -2166,7 +2166,7 @@
 			],
 			"ac": [
 				{
-					"ac": 17,
+					"ac": 15,
 					"from": [
 						"{@item chain shirt|phb}"
 					]
