@@ -1,5 +1,5 @@
 {
-	"siteVersion": "1.135.0",
+	"siteVersion": "1.136.0",
 	"_meta": {
 		"sources": [
 			{
@@ -13,8 +13,8 @@
 				"convertedBy": []
 			}
 		],
-		"dateAdded": 1631243298,
-		"dateLastModified": 1631243298
+		"dateAdded": 1632882850,
+		"dateLastModified": 1632882850
 	},
 	"monster": [
 		{
@@ -1636,14 +1636,11 @@
 			"type": {
 				"type": "humanoid",
 				"tags": [
-					"any race"
+					"gnome"
 				]
 			},
 			"alignment": [
-				"NX",
-				"C",
-				"G",
-				"NY",
+				"N",
 				"E"
 			],
 			"ac": [
@@ -1667,27 +1664,35 @@
 			"int": 16,
 			"wis": 11,
 			"cha": 11,
+			"save": {
+				"dex": "+7",
+				"int": "+7"
+			},
 			"skill": {
-				"acrobatics": "+7",
-				"athletics": "+3",
-				"stealth": "+7",
-				"deception": "+4",
-				"animal handling": "+2"
+				"acrobatics": "+11",
+				"athletics": "+5",
+				"stealth": "+11",
+				"deception": "+8",
+				"animal handling": "+4"
 			},
 			"senses": [
 				"darkvision 60 ft."
 			],
 			"passive": 10,
+			"resist": [
+				"poison"
+			],
 			"languages": [
 				"Common",
-				"Gnomish"
+				"Gnomish",
+				"Thieves' cant"
 			],
-			"cr": "2",
+			"cr": "9",
 			"spellcasting": [
 				{
 					"name": "Spellcasting",
 					"headerEntries": [
-						"Fera is a natural spellcaster due to her gnomish origins. Her spellcasting ability is Intelligence (spell save {@dc 13}, +5 to hit with spell attacks)."
+						"Fera is a natural spellcaster due to her gnomish origins. Her spellcasting ability is Intelligence (spell save {@dc 15}, +7 to hit with spell attacks)."
 					],
 					"spells": {
 						"0": {
@@ -1704,13 +1709,31 @@
 				{
 					"name": "Lightfooted",
 					"entries": [
-						"The swashbuckler can take the Dash or Disengage action as a bonus action on each of its turns."
+						"Fera can take the Dash or Disengage action as a bonus action on each of its turns."
 					]
 				},
 				{
 					"name": "Gnome Cunning",
 					"entries": [
-						"The fera (Afrera Bjinn) has advantage on Intelligence, Wisdom, and Charisma saving throws against magic."
+						"Fera has advantage on Intelligence, Wisdom, and Charisma saving throws against magic."
+					]
+				},
+				{
+					"name": "Assassinate",
+					"entries": [
+						"During its first turn, Fera has advantage on attack rolls against any creature that hasn't taken a turn. Any hit Ferascores against a surprised creature is a critical hit."
+					]
+				},
+				{
+					"name": "Evasion",
+					"entries": [
+						"If Fera is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, Fera instead takes no damage if it succeeds on the saving throw, and only half damage if it fails."
+					]
+				},
+				{
+					"name": "Sneak Attack (Assassin)",
+					"entries": [
+						"Once per turn, Fera deals an extra 14 ({@damage 4d6}) damage when it hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 feet of an ally of Fera that isn't {@condition incapacitated} and Fera doesn't have disadvantage on the attack roll."
 					]
 				}
 			],
@@ -1718,19 +1741,31 @@
 				{
 					"name": "Multiattack",
 					"entries": [
-						"The swashbuckler makes three attacks: one with a dagger and two with its rapier."
+						"The swashbuckler makes two or three attacks: one with a dagger and two with its rapier or one with the light crossbow and another with the shortsword (poison damage only dealt once per round)."
 					]
 				},
 				{
 					"name": "Dagger",
 					"entries": [
-						"{@atk mw,rw} {@hit 5} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}5 ({@damage 1d4 + 3}) piercing damage."
+						"{@atk mw,rw} {@hit 7} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}5 ({@damage 1d4 + 3}) piercing damage"
 					]
 				},
 				{
 					"name": "Rapier",
 					"entries": [
-						"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d8 + 3}) piercing damage."
+						"{@atk mw} {@hit 7} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d8 + 3}) piercing damage."
+					]
+				},
+				{
+					"name": "Light Crossbow",
+					"entries": [
+						"{@atk rw} {@hit 7} to hit, range 80/320 ft., one target. {@h}7 ({@damage 1d8 + 3}) piercing damage, and the target must make a {@dc 15} Constitution saving throw, taking 24 ({@damage 7d6}) poison damage on a failed save, or half as much damage on a successful one."
+					]
+				},
+				{
+					"name": "Shortsword",
+					"entries": [
+						"{@atk mw} {@hit 7} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d6 + 3}) piercing damage, and the target must make a {@dc 15} Constitution saving throw, taking 24 ({@damage 7d6}) poison damage on a failed save, or half as much damage on a successful one."
 					]
 				}
 			],
@@ -1774,6 +1809,9 @@
 				"type": "external",
 				"url": "https://5etools-mirror-1.github.io/audio/bestiary/swashbuckler.mp3"
 			},
+			"traitTags": [
+				"Sneak Attack"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -1782,15 +1820,21 @@
 			],
 			"languageTags": [
 				"C",
-				"G"
+				"G",
+				"TC"
 			],
 			"damageTags": [
+				"I",
 				"P"
 			],
 			"miscTags": [
 				"MW",
+				"RNG",
 				"RW",
 				"THW"
+			],
+			"conditionInflict": [
+				"incapacitated"
 			],
 			"hasFluff": true,
 			"hasFluffImages": true
