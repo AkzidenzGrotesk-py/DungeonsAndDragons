@@ -1,5 +1,5 @@
 {
-	"siteVersion": "1.136.0",
+	"siteVersion": "1.139.0",
 	"_meta": {
 		"sources": [
 			{
@@ -13,8 +13,8 @@
 				"convertedBy": []
 			}
 		],
-		"dateAdded": 1632882850,
-		"dateLastModified": 1632882850
+		"dateAdded": 1633844617,
+		"dateLastModified": 1633844617
 	},
 	"monster": [
 		{
@@ -1431,8 +1431,9 @@
 		},
 		{
 			"name": "Xug (Kobold Scale Sorcerer)",
+			"isNamedCreature": true,
 			"source": "PandemoniumIvory",
-			"level": 4,
+			"level": 5,
 			"size": "S",
 			"type": {
 				"type": "humanoid",
@@ -1453,8 +1454,8 @@
 				}
 			],
 			"hp": {
-				"formula": "4d6 + 12",
-				"average": 26
+				"formula": "5d6 + 15",
+				"average": 32
 			},
 			"speed": {
 				"walk": 30
@@ -1466,8 +1467,8 @@
 			"wis": 9,
 			"cha": 18,
 			"skill": {
-				"arcana": "+2",
-				"medicine": "+1"
+				"arcana": "+3",
+				"medicine": "+2"
 			},
 			"senses": [
 				"darkvision 60 ft."
@@ -1481,8 +1482,8 @@
 				{
 					"name": "Spellcasting",
 					"headerEntries": [
-						"The kobold is a 3rd-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 14}, {@hit 6} to hit with spell attacks). ",
-						"It has the following sorcerer spells prepared:"
+						"The kobold is a 5th-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 15}, {@hit 7} to hit with spell attacks). ",
+						"He has the following sorcerer spells prepared:"
 					],
 					"spells": {
 						"0": {
@@ -1508,6 +1509,13 @@
 								"{@spell spider climb}"
 							],
 							"slots": 3
+						},
+						"3": {
+							"spells": [
+								"purge amalgamation",
+								"{@spell haste}"
+							],
+							"slots": 2
 						}
 					},
 					"ability": "cha",
@@ -1518,7 +1526,7 @@
 				{
 					"name": "Sorcery Points",
 					"entries": [
-						"The kobold has 4 sorcery points. It regains all its spent sorcery points when it finishes a long rest. It can spend its sorcery points on the following options:",
+						"The kobold has 5 sorcery points. It regains all its spent sorcery points when it finishes a long rest. It can spend its sorcery points on the following options:",
 						"Twinned Spell: When it casts a spell that targets only one creature and doesn't have a range of self, the kobold can spend a number of sorcery points equal to the spell's level to target a second creature in range with the same spell (1 sorcery point if the spell is a cantrip).",
 						"Subtle Spell: When the kobold casts a spell, it can spend 1 sorcery point to cast the spell without any somatic or verbal components."
 					]
@@ -1535,13 +1543,19 @@
 						"At 1st level, the kobold's hit point maximum increases by 1 and increases by 1 again whenever it gains a level in this class.",
 						"Additionally, parts of your skin are covered by a thin sheen of dragon-like scales. When you aren't wearing armor, your AC equals 13 + your Dexterity modifier."
 					]
+				},
+				{
+					"name": "Magical Guidance",
+					"entries": [
+						"When Xug makes an ability check that fails, he can spend 1 sorcery point to reroll the {@dice d20}, and he must use the new roll, potentially turning the failure into a success."
+					]
 				}
 			],
 			"action": [
 				{
 					"name": "Dagger",
 					"entries": [
-						"{@atk mw,rw} {@hit 4} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage."
+						"{@atk mw,rw} {@hit 5} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage."
 					]
 				}
 			],
@@ -1549,7 +1563,7 @@
 				{
 					"name": "Quick Dice",
 					"entries": [
-						"Xug has a number of quick dice equal to twice his hit dice ({@dice 8d6}). He can use a number up to his level to regain hit points plus his Constitution modifier per dice."
+						"Xug has a number of quick dice equal to twice his hit dice ({@dice 10d6}). He can use a number up to his level to regain hit points plus his Constitution modifier per dice."
 					]
 				}
 			],
