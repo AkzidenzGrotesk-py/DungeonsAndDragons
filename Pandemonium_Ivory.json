@@ -13,8 +13,8 @@
 				"convertedBy": []
 			}
 		],
-		"dateAdded": 1633844617,
-		"dateLastModified": 1633844617
+		"dateAdded": 1634529427,
+		"dateLastModified": 1634529427
 	},
 	"monster": [
 		{
@@ -1431,9 +1431,8 @@
 		},
 		{
 			"name": "Xug (Kobold Scale Sorcerer)",
-			"isNamedCreature": true,
 			"source": "PandemoniumIvory",
-			"level": 5,
+			"level": 4,
 			"size": "S",
 			"type": {
 				"type": "humanoid",
@@ -1454,8 +1453,8 @@
 				}
 			],
 			"hp": {
-				"formula": "5d6 + 15",
-				"average": 32
+				"formula": "4d6 + 12",
+				"average": 26
 			},
 			"speed": {
 				"walk": 30
@@ -1467,8 +1466,8 @@
 			"wis": 9,
 			"cha": 18,
 			"skill": {
-				"arcana": "+3",
-				"medicine": "+2"
+				"arcana": "+2",
+				"medicine": "+1"
 			},
 			"senses": [
 				"darkvision 60 ft."
@@ -1482,8 +1481,8 @@
 				{
 					"name": "Spellcasting",
 					"headerEntries": [
-						"The kobold is a 5th-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 15}, {@hit 7} to hit with spell attacks). ",
-						"He has the following sorcerer spells prepared:"
+						"The kobold is a 3rd-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 14}, {@hit 6} to hit with spell attacks). ",
+						"It has the following sorcerer spells prepared:"
 					],
 					"spells": {
 						"0": {
@@ -1509,13 +1508,6 @@
 								"{@spell spider climb}"
 							],
 							"slots": 3
-						},
-						"3": {
-							"spells": [
-								"purge amalgamation",
-								"{@spell haste}"
-							],
-							"slots": 2
 						}
 					},
 					"ability": "cha",
@@ -1526,7 +1518,7 @@
 				{
 					"name": "Sorcery Points",
 					"entries": [
-						"The kobold has 5 sorcery points. It regains all its spent sorcery points when it finishes a long rest. It can spend its sorcery points on the following options:",
+						"The kobold has 4 sorcery points. It regains all its spent sorcery points when it finishes a long rest. It can spend its sorcery points on the following options:",
 						"Twinned Spell: When it casts a spell that targets only one creature and doesn't have a range of self, the kobold can spend a number of sorcery points equal to the spell's level to target a second creature in range with the same spell (1 sorcery point if the spell is a cantrip).",
 						"Subtle Spell: When the kobold casts a spell, it can spend 1 sorcery point to cast the spell without any somatic or verbal components."
 					]
@@ -1543,19 +1535,13 @@
 						"At 1st level, the kobold's hit point maximum increases by 1 and increases by 1 again whenever it gains a level in this class.",
 						"Additionally, parts of your skin are covered by a thin sheen of dragon-like scales. When you aren't wearing armor, your AC equals 13 + your Dexterity modifier."
 					]
-				},
-				{
-					"name": "Magical Guidance",
-					"entries": [
-						"When Xug makes an ability check that fails, he can spend 1 sorcery point to reroll the {@dice d20}, and he must use the new roll, potentially turning the failure into a success."
-					]
 				}
 			],
 			"action": [
 				{
 					"name": "Dagger",
 					"entries": [
-						"{@atk mw,rw} {@hit 5} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage."
+						"{@atk mw,rw} {@hit 4} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage."
 					]
 				}
 			],
@@ -1563,7 +1549,7 @@
 				{
 					"name": "Quick Dice",
 					"entries": [
-						"Xug has a number of quick dice equal to twice his hit dice ({@dice 10d6}). He can use a number up to his level to regain hit points plus his Constitution modifier per dice."
+						"Xug has a number of quick dice equal to twice his hit dice ({@dice 8d6}). He can use a number up to his level to regain hit points plus his Constitution modifier per dice."
 					]
 				}
 			],
@@ -2627,6 +2613,255 @@
 			],
 			"hasFluff": true,
 			"hasFluffImages": true
+		},
+		{
+			"name": "\"Flame of Embers\" / Kifa Illiengar",
+			"source": "PandemoniumIvory",
+			"size": "M",
+			"type": {
+				"type": "undead",
+				"tags": [
+					"revenant"
+				]
+			},
+			"alignment": [
+				"C",
+				"G"
+			],
+			"ac": [
+				{
+					"ac": 13,
+					"from": [
+						"{@item leather armor|phb}"
+					]
+				}
+			],
+			"hp": {
+				"formula": "16d8 + 64",
+				"average": 136
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 18,
+			"dex": 14,
+			"con": 18,
+			"int": 13,
+			"wis": 16,
+			"cha": 18,
+			"save": {
+				"con": "+8",
+				"wis": "+7"
+			},
+			"skill": {
+				"religion": "+5",
+				"deception": "+8",
+				"stealth": "+10",
+				"sleight of hand": "+6"
+			},
+			"senses": [
+				"darkvision 60 ft.",
+				"truesight 10 ft."
+			],
+			"passive": 13,
+			"resist": [
+				"necrotic",
+				"psychic"
+			],
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"charmed",
+				"exhaustion",
+				"frightened",
+				"paralyzed",
+				"poisoned",
+				"stunned"
+			],
+			"languages": [
+				"Common",
+				"Undercommon",
+				"Orc"
+			],
+			"cr": "9",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The \"Flame of Embers\" is a 9th-level spellcaster. Her spellcasting ability is Wisdom (spell save {@dc 15}, {@hit 7} to hit with spell attacks). She has the following spells prepared:"
+					],
+					"spells": {
+						"0": {
+							"spells": [
+								"{@spell mending}",
+								"{@spell sacred flame}"
+							]
+						},
+						"1": {
+							"spells": [
+								"{@spell disguise self}",
+								"{@spell guiding bolt}",
+								"{@spell healing word}",
+								"{@spell shield of faith}"
+							],
+							"slots": 4
+						},
+						"2": {
+							"spells": [
+								"{@spell lesser restoration}",
+								"{@spell magic weapon}",
+								"{@spell prayer of healing}",
+								"{@spell silence}",
+								"{@spell spiritual weapon}"
+							],
+							"slots": 3
+						},
+						"3": {
+							"spells": [
+								"{@spell beacon of hope}",
+								"{@spell counterspell}",
+								"{@spell crusader's mantle}",
+								"{@spell dispel magic}",
+								"{@spell revivify}",
+								"{@spell spirit guardians}"
+							],
+							"slots": 3
+						},
+						"4": {
+							"spells": [
+								"{@spell banishment}",
+								"{@spell dimension door}"
+							],
+							"slots": 3
+						},
+						"5": {
+							"spells": [
+								"{@spell cone of cold}",
+								"{@spell flame strike}",
+								"{@spell hold monster}",
+								"{@spell mass cure wounds}"
+							],
+							"slots": 1
+						}
+					},
+					"ability": "wis",
+					"type": "spellcasting"
+				}
+			],
+			"trait": [
+				{
+					"name": "Turn Immunity",
+					"entries": [
+						"The revenant is immune to effects that turn undead."
+					]
+				},
+				{
+					"name": "Vengeful Tracker",
+					"entries": [
+						"The revenant knows the distance to and direction of any creature against which it seeks revenge, even if the creature and the revenant are on different planes of existence. If the creature being tracked by the revenant dies, the revenant knows."
+					]
+				},
+				{
+					"name": "Rejuvenation",
+					"entries": [
+						"When the revenant’s body is destroyed, its soul lingers. After 24 hours, the soul inhabits and animates another humanoid corpse on the same plane of existence and regains all its hit points. While the soul is bodiless, a wish spell can be used to force the soul to go to the afterlife and not return."
+					]
+				},
+				{
+					"name": "Regeneration",
+					"entries": [
+						"The revenant regains 10 hit points at the start of its turn. If the revenant takes fire or radiant damage, this trait doesn’t function at the start of the revenant’s next turn. The revenant’s body is destroyed only if it starts its turn with 0 hit points and doesn’t regenerate."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The priest makes two melee attacks."
+					]
+				},
+				{
+					"name": "Fist",
+					"entries": [
+						"{@atk mw} {@hit 7} to hit, reach 5 ft., one target. {@h}11 ({@damage 2d6 + 4}) bludgeoning damage. If the target is a creature against which the revenant has sworn vengeance, the target takes an extra 14 ({@damage 4d6}) bludgeoning damage. Instead of dealing damage, the revenant can grapple the target (escape {@dc 14}) provided the target is Large or smaller."
+					]
+				},
+				{
+					"name": "Vengeful Glare",
+					"entries": [
+						"The revenant targets one creature it can see within 30 feet of it and against which it has sworn vengeance. The target must make a {@dc 15} Wisdom saving throw. On a failure, the target is {@condition paralyzed} until the revenant deals damage to it, or until the end of the revenant’s next turn. When the paralysis ends, the target is {@condition frightened} of the revenant for 1 minute. The {@condition frightened} target can repeat the saving throw at the end of each of its turns, with disadvantage if it can see the revenant, ending the {@condition frightened} condition on itself on a success."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Guided Strike (Recharges after a Short or Long Rest)",
+					"entries": [
+						"The priest grants a +10 bonus to an attack roll made by itself or another creature within 30 feet of it. The priest can make this choice after the roll is made but before it hits or misses."
+					]
+				}
+			],
+			"environment": [
+				"desert",
+				"urban"
+			],
+			"fluff": {
+				"name": "War Priest",
+				"source": "VGM",
+				"entries": [
+					{
+						"type": "entries",
+						"entries": [
+							{
+								"type": "entries",
+								"entries": [
+									{
+										"type": "entries",
+										"entries": [
+											"War priests worship deities of war and combat. They plan tactics, lead soldiers into battle, confront enemy spellcasters, and tend to casualties. A war priest might command an army or serve as a warlord's right hand on the battlefield."
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			"tokenUrl": "https://5e.tools/img/VGM/War Priest.png",
+			"soundClip": {
+				"type": "external",
+				"url": "https://5e.tools/audio/bestiary/war-priest.mp3"
+			},
+			"traitTags": [
+				"Regeneration",
+				"Rejuvenation",
+				"Turn Immunity"
+			],
+			"senseTags": [
+				"D",
+				"U"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"O",
+				"U"
+			],
+			"damageTags": [
+				"B"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflict": [
+				"frightened",
+				"paralyzed"
+			],
+			"hasFluff": true
 		}
 	]
 }
