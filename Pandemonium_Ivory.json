@@ -1,5 +1,5 @@
 {
-	"siteVersion": "1.139.0",
+	"siteVersion": "1.140.0",
 	"_meta": {
 		"sources": [
 			{
@@ -13,8 +13,8 @@
 				"convertedBy": []
 			}
 		],
-		"dateAdded": 1634529427,
-		"dateLastModified": 1634529427
+		"dateAdded": 1635220690,
+		"dateLastModified": 1635220690
 	},
 	"monster": [
 		{
@@ -2862,6 +2862,163 @@
 				"paralyzed"
 			],
 			"hasFluff": true
+		},
+		{
+			"name": "Altot",
+			"isNamedCreature": true,
+			"source": "PandemoniumIvory",
+			"size": "S",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"goblin"
+				]
+			},
+			"alignment": [
+				"C",
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"{@item leather armor|phb}"
+					]
+				}
+			],
+			"hp": {
+				"formula": "12d8 + 12",
+				"average": 66
+			},
+			"speed": {
+				"walk": 40,
+				"climb": 20
+			},
+			"str": 12,
+			"dex": 18,
+			"con": 12,
+			"int": 14,
+			"wis": 13,
+			"cha": 15,
+			"skill": {
+				"acrobatics": "+8",
+				"athletics": "+5",
+				"stealth": "+8"
+			},
+			"passive": 11,
+			"languages": [
+				"Common",
+				"Goblin",
+				"Undercommon",
+				"Thieves' Cant"
+			],
+			"cr": "3",
+			"trait": [
+				{
+					"name": "Lightfooted",
+					"entries": [
+						"Altot can take the Dash or Disengage action as a bonus action on each of his turns."
+					]
+				},
+				{
+					"name": "Suave Defense",
+					"entries": [
+						"While Altot is wearing light or no armor and wielding no shield, his AC includes its Charisma modifier."
+					]
+				},
+				{
+					"name": "Alchemist",
+					"entries": [
+						"Altot tinkers with potions. After a long rest he can choose to regain 2 uncommon potions or 1 rare potion from the list below. Uncommon: Healing, Greater Healing, Acid/Cold/Fire/Force/Lightning/Necrotic/Poison/Psychic/Radiant/Thunder Resistance or Growth. Rare: Gaseous Form, Heroism, Invulnerability, Superior Healing, Invisibility, Speed, Flying",
+						"His bandolier can carry a total of 6 potions, currently he carries: 2 Greater Healing, 1 Superior Healing, 1 Invulnerability, 1 Gaseous Form, 1 Speed"
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Altot makes three attacks: one with a dagger and two with his rapier."
+					]
+				},
+				{
+					"name": "Dagger",
+					"entries": [
+						"{@atk mw,rw} {@hit 6} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}6 ({@damage 1d4 + 4}) piercing damage."
+					]
+				},
+				{
+					"name": "Rapier",
+					"entries": [
+						"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}8 ({@damage 1d8 + 4}) piercing damage."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Drink Potion {@recharge 5}",
+					"entries": [
+						"Altot drinks any potion as a bonus action."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"fluff": {
+				"name": "Swashbuckler",
+				"source": "VGM",
+				"entries": [
+					{
+						"type": "entries",
+						"entries": [
+							{
+								"type": "entries",
+								"entries": [
+									{
+										"type": "entries",
+										"entries": [
+											"Swashbucklers are charming ne'er-do-wells who live by their own codes of honor. They crave notoriety, often indulge in romantic trysts, and eke out livings as pirates and corsairs, rarely staying in one place for too long."
+										]
+									}
+								]
+							}
+						]
+					}
+				],
+				"images": [
+					{
+						"type": "image",
+						"href": {
+							"type": "internal",
+							"path": "bestiary/VGM/Swashbuckler.jpg"
+						}
+					}
+				]
+			},
+			"tokenUrl": "https://5e.tools/img/VGM/Swashbuckler.png",
+			"soundClip": {
+				"type": "external",
+				"url": "https://5e.tools/audio/bestiary/swashbuckler.mp3"
+			},
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"GO",
+				"U"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MW",
+				"RW",
+				"THW"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		}
 	]
 }
