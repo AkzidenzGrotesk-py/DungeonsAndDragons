@@ -13,8 +13,8 @@
 				"convertedBy": []
 			}
 		],
-		"dateAdded": 1652145027,
-		"dateLastModified": 1652145027
+		"dateAdded": 1652146942,
+		"dateLastModified": 1652146942
 	},
 	"monster": [
 		{
@@ -3185,6 +3185,204 @@
 			],
 			"hasFluff": true,
 			"hasFluffImages": true
+		},
+		{
+			"name": "Minore Moonbrook (Red Brook)",
+			"source": "PandemoniumIvory",
+			"level": 10,
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					{
+						"tag": "elf",
+						"prefix": "high"
+					}
+				]
+			},
+			"alignment": [
+				"L"
+			],
+			"ac": [
+				12,
+				{
+					"ac": 15,
+					"condition": "with {@spell mage armor}",
+					"braces": true
+				}
+			],
+			"hp": {
+				"formula": "10d6 + 20",
+				"average": 62
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 10,
+			"dex": 15,
+			"con": 14,
+			"int": 20,
+			"wis": 12,
+			"cha": 10,
+			"save": {
+				"int": "+9",
+				"wis": "+5"
+			},
+			"skill": {
+				"arcana": "+9",
+				"history": "+9"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 15,
+			"languages": [
+				"Common",
+				"Elvish"
+			],
+			"cr": "10",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The abjurer casts one of the following spells, using Intelligence as the spellcasting ability (spell save {@dc 17}, spell attack +9):"
+					],
+					"spells": {
+						"0": {
+							"spells": [
+								"{@spell shocking grasp}"
+							]
+						},
+						"1": {
+							"spells": [
+								"{@spell mage armor}",
+								"{@spell shield}",
+								"{@spell witch bolt}"
+							],
+							"slots": 4
+						},
+						"2": {
+							"spells": [
+								"{@spell darkness}",
+								"{@spell web}"
+							],
+							"slots": 3
+						},
+						"3": {
+							"spells": [
+								"{@spell dispel magic}",
+								"{@spell lightning bolt}"
+							],
+							"slots": 3
+						},
+						"5": {
+							"spells": [
+								"{@spell far step|XGE}",
+								"{@spell wall of force}"
+							],
+							"slots": 2
+						}
+					},
+					"ability": "int",
+					"type": "spellcasting"
+				}
+			],
+			"trait": [
+				{
+					"name": "Tactical Wit",
+					"entries": [
+						"Add Intelligence to initiative, for +7."
+					]
+				},
+				{
+					"name": "Durable Magic",
+					"entries": [
+						"+2 to AC and saves while concentrating on a spell"
+					]
+				},
+				{
+					"name": "Arcane Deflection",
+					"entries": [
+						"If a spell is not cast for a round, use a reaction for +2 to AC or +4 to a save."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Make two melee or ranged attacks."
+					]
+				},
+				{
+					"name": "Shortsword",
+					"entries": [
+						"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d6 + 4}) piercing damage, plus 3 ({@damage 1d6}) damage."
+					]
+				},
+				{
+					"name": "Shortbow",
+					"entries": [
+						"{@atk rw} {@hit 6} to hit, range 80/320 ft., one target. {@h}7 ({@damage 1d6 + 4}) piercing damage, plus 3 ({@damage 1d6}) damage."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"fluff": {
+				"name": "Abjurer Wizard",
+				"source": "MPMM",
+				"entries": [
+					{
+						"type": "entries",
+						"entries": [
+							"Abjurers specialize in creating protective magical wards. Monarchs, nobles, and other wealthy individuals commonly hire abjurers to provide protection."
+						]
+					},
+					{
+						"type": "section",
+						"name": "Wizards",
+						"entries": [
+							"Wizards pursue magical power through the study of arcane texts. Some travel the world searching for esoteric tomes while others train lesser wizards or collaborate with colleagues to create new spells."
+						]
+					}
+				]
+			},
+			"tokenUrl": "https://5e.tools/img/MPMM/Abjurer Wizard.png",
+			"soundClip": {
+				"type": "external",
+				"url": "https://5e.tools/audio/bestiary/abjurer.mp3"
+			},
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"E"
+			],
+			"damageTags": [
+				"P"
+			],
+			"damageTagsSpell": [
+				"F",
+				"L"
+			],
+			"miscTags": [
+				"MW",
+				"RNG",
+				"RW"
+			],
+			"conditionInflictSpell": [
+				"incapacitated",
+				"invisible"
+			],
+			"hasFluff": true
 		}
 	]
 }
