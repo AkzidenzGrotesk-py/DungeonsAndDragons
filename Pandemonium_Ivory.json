@@ -13,8 +13,8 @@
 				"convertedBy": []
 			}
 		],
-		"dateAdded": 1652146942,
-		"dateLastModified": 1652146942
+		"dateAdded": 1652637676,
+		"dateLastModified": 1652637676
 	},
 	"monster": [
 		{
@@ -3266,20 +3266,31 @@
 						"2": {
 							"spells": [
 								"{@spell darkness}",
+								"{@spell scorching ray}",
 								"{@spell web}"
 							],
 							"slots": 3
 						},
 						"3": {
 							"spells": [
+								"{@spell counterspell}",
 								"{@spell dispel magic}",
-								"{@spell lightning bolt}"
+								"{@spell lightning bolt}",
+								"{@spell thunder step|XGE}"
+							],
+							"slots": 3
+						},
+						"4": {
+							"spells": [
+								"{@spell storm sphere|XGE}"
 							],
 							"slots": 3
 						},
 						"5": {
 							"spells": [
 								"{@spell far step|XGE}",
+								"{@spell legend lore}",
+								"{@spell synaptic static|XGE}",
 								"{@spell wall of force}"
 							],
 							"slots": 2
@@ -3370,8 +3381,11 @@
 				"P"
 			],
 			"damageTagsSpell": [
+				"B",
 				"F",
-				"L"
+				"L",
+				"T",
+				"Y"
 			],
 			"miscTags": [
 				"MW",
